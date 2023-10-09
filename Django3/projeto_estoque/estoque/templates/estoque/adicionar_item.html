@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Define o título da página -->
+    <title>Adicionar Item ao Estoque</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'estoques/css/estilos.css' %}">
+
+</head>
+
+  <body class="container">
+    <!-- Cria um cabeçalho -->
+    <h1>Adicionar Item ao Estoque</h1>
+
+    <!-- Cria um formulário com o método de envio POST -->
+    <form method="post" class="item-form">
+      <!-- Adiciona um token CSRF para proteção contra CSRF -->
+      {% csrf_token %}
+
+      <!-- Renderiza os campos do formulário como parágrafos -->
+      {{ form.as_p }}
+
+      <!-- Cria um botão de submissão do formulário -->
+      <button type="submit" class="button">Adicionar Item</button>
+    </form>
+  </body>
+</html>
